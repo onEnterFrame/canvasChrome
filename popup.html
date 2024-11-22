@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Canvas Data Panel</title>
+    <link href="css/styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="header" class="header">
+      <h1>Canvas Data Panel</h1>
+      <div id="students">
+        <div id="studentsList" class=""></div>
+      </div>
+      <div id="loading" class="hidden">Loading...</div>
+    </div>
+    <div id="error" class="error hidden"></div>
+    <!-- tabs for due now, courses, summary -->
+    <div class="tabs">
+      <div class="tab" id="dueNowTab">Due Now</div>
+      <div class="tab" id="coursesTab">Courses</div>
+      <div class="tab" id="summaryTab">Summary</div>
+    </div>
+
+    <!-- content for due now, courses, summary -->
+    <div class="container">
+      <div id="dueNow" class="section">
+        <h2>Due Now</h2>
+        <div id="dueNowList" class="data-list"></div>
+      </div>
+
+      <div id="coursesAndAssignments" class="section">
+        <div class="row">
+          <div>
+            <h2>Courses</h2>
+            <div id="coursesList" class="data-list"></div>
+          </div>
+          <div>
+            <h2>Assignments</h2>
+            <p class="no-course">Please select a course.</p>
+            <div id="assignmentsList" class="data-list"></div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div id="summaryContainer" class="section">
+          <p class="no-course">Please select a course.</p>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="libs/marked.js"></script>
+    <script src="js/dataRenderers.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/init.js"></script>
+  </body>
+</html>

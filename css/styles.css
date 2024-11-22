@@ -1,0 +1,412 @@
+/* Base styles */
+body {
+  width: 600px;
+  max-width: 600px;
+  min-height: 600px;
+  max-height: 800px;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, sans-serif;
+  background: #f5f5f5;
+  overflow: hidden;
+}
+
+/* Ensure the parent container uses flexbox and has a defined height */
+.container {
+  display: flex;
+  flex-direction: column;
+  /* Full viewport height minus header and tab heights */
+  height: calc(100vh - 84px);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+  padding-bottom: 2px;
+  border-bottom: 2px solid #e0e0e0;
+  padding-right: 16px;
+  padding-left: 16px;
+  height: 38px;
+  position: relative;
+}
+
+.header.loading::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #3498db;
+  animation: loadingAnimation 1s linear infinite;
+}
+
+@keyframes loadingAnimation {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+h1 {
+  font-size: 1.5rem;
+  color: #2d3b45;
+  margin: 0;
+}
+
+h2 {
+  font-size: 1.1rem;
+  color: #2d3b45;
+  margin: 0 0 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h3 {
+  font-size: 1rem;
+  color: #2d3b45;
+  margin: 16px 0 8px 0;
+}
+
+/* Make the section fill the available height */
+.section {
+  background: white;
+  padding: 6px;
+
+  flex: 1; /* Allow the section to grow and fill the available space */
+  overflow-y: auto; /* Add vertical scrolling if content overflows */
+}
+
+.data-list {
+  overflow-y: auto;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  /* Ensure the list fills the available height but not any bigger.  */
+  flex: 1;
+  min-height: 200px;
+  max-height: 450px;
+}
+
+.data-item {
+  padding: 12px;
+  border-bottom: 1px solid #e0e0e0;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.data-item:last-child {
+  border-bottom: none;
+}
+
+.data-item:hover {
+  background: #f8f9fa;
+}
+
+.data-item.clickable {
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+.error {
+  color: #dc3545;
+  padding: 8px;
+  margin: 8px 0;
+  background: #f8d7da;
+  border-radius: 4px;
+}
+
+/* Student specific */
+.student-name {
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.student-email {
+  font-size: 0.8em;
+  color: #666;
+}
+
+/* Course specific */
+.course-name {
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.course-code {
+  font-size: 0.8em;
+  color: #666;
+}
+
+/* Assignment specific */
+.assignment-name {
+  font-weight: 500;
+  margin-bottom: 4px;
+  min-width: 40px;
+}
+
+.assignment-due-date {
+  font-size: 0.8em;
+  color: #666;
+  margin-bottom: 2px;
+}
+
+.assignment-submission {
+  font-size: 0.8em;
+}
+
+.assignment-submission.overdue {
+  color: #dc3545;
+}
+
+.participation {
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.participation.participated {
+  background-color: rgba(40, 167, 69, 0.1);
+  color: #28a745;
+}
+
+.participation.not-participated {
+  background-color: rgba(220, 53, 69, 0.1);
+  color: #dc3545;
+}
+
+/* Button styles */
+.button {
+  padding: 6px 12px;
+  border-radius: 4px;
+  border: none;
+  background-color: #0a5ad4;
+  color: white;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.2s;
+}
+
+.button:hover {
+  background-color: #0842a0;
+}
+
+/* Summary Panel */
+.summary-panel {
+  background: #fff;
+  border-radius: 8px;
+  padding: 16px;
+  margin-top: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4px;
+  margin-top: 8px;
+}
+
+.summary-item {
+  padding: 12px;
+  background: #f8f9fa;
+  border-radius: 6px;
+  border: 1px solid #e0e0e0;
+}
+
+.summary-label {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+.summary-value {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #2d3b45;
+}
+
+.summary-value.warning {
+  color: #dc3545;
+}
+
+.summary-value.success {
+  color: #28a745;
+}
+
+.ai-content {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #2d3b45;
+  padding: 8px;
+}
+
+.ai-content p {
+  margin: 8px 0;
+}
+
+.ai-content ul {
+  margin: 8px 0;
+  padding-left: 20px;
+}
+
+.ai-content li {
+  margin: 4px 0;
+}
+/* Add to styles.css */
+.row {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+}
+
+.row .section {
+  flex: 1;
+  min-width: 0; /* Prevents flex items from overflowing */
+}
+
+.row .data-list {
+  min-height: 200px; /* Ensure consistent height */
+}
+/* Add to styles.css */
+.student-select:hover {
+  border-color: #0a5ad4;
+}
+
+.student-select:focus {
+  outline: none;
+  border-color: #0a5ad4;
+  box-shadow: 0 0 0 2px rgba(10, 90, 212, 0.1);
+}
+
+.student-select option {
+  padding: 8px;
+}
+
+/* Add to styles.css */
+.tabs {
+  display: flex;
+  border-bottom: 1px solid #e0e0e0;
+  height: 34px;
+}
+
+.tab {
+  padding: 8px 16px;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  color: #666;
+  transition: all 0.2s;
+}
+
+.tab:hover {
+  color: #0a5ad4;
+}
+
+.tab.active {
+  color: #0a5ad4;
+  border-bottom-color: #0a5ad4;
+  font-weight: 500;
+  background-color: #e0e0e0;
+}
+
+#dueNow,
+#coursesAndAssignments,
+#summaryContainer {
+  display: none;
+}
+
+/* AI Summary */
+.ai-summary {
+  margin-top: 6px;
+  padding-top: 6px;
+  max-height: 300px; /* Set a fixed height */
+  overflow-y: auto; /* Enable vertical scrolling */
+}
+
+/* Custom scrollbar styles for WebKit browsers */
+.ai-summary::-webkit-scrollbar {
+  width: 8px;
+}
+
+.ai-summary::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.ai-summary::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.ai-summary::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Custom scrollbar styles for Firefox */
+.ai-summary {
+  scrollbar-width: thin;
+  scrollbar-color: #888 #f1f1f1;
+}
+
+.ai-summary p {
+  margin: 0;
+}
+
+.ai-content {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #2d3b45;
+}
+
+.ai-content p {
+  margin: 8px 0;
+}
+
+.ai-content ul {
+  margin: 8px 0;
+  padding-left: 20px;
+}
+
+.ai-content li {
+  margin: 4px 0;
+}
+
+.course-name.active {
+  font-weight: bold;
+  color: #000000;
+}
+
+.active-parent {
+  background-color: #c1c1c1;
+}
+
+.assignment-icon {
+  display: inline-block;
+  margin-right: 2px;
+  font-size: 1.2rem;
+  vertical-align: middle;
+}
+
+.status-overdue {
+  color: #d9534f; /* Red */
+}
+
+.status-upcoming {
+  color: #5bc0de; /* Blue */
+}
+
+.status-late {
+  color: #f0ad4e; /* Orange */
+}
+
+.status-submitted {
+  color: #5cb85c; /* Green */
+}

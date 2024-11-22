@@ -1,0 +1,34 @@
+{
+  "manifest_version": 3,
+  "name": "Canvas Data Panel",
+  "version": "1.0",
+  "description": "Displays Canvas course data in a panel",
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "storage",
+    "aiLanguageModelOriginTrial"
+  ],
+  "trial_tokens": [
+    "At3L+PSNLEl6bEL/Ko12eGwhfDJmQoW8vNEw4XKK++78QkwnvDErrpyCsilWPmK5jv7d1wsfqVB/+fKWgpWlhQQAAAB4eyJvcmlnaW4iOiJjaHJvbWUtZXh0ZW5zaW9uOi8va2xlbG1vbW9kYmJtbWFwZ29jbW9wZWxibWFsb25oY24iLCJmZWF0dXJlIjoiQUlQcm9tcHRBUElGb3JFeHRlbnNpb24iLCJleHBpcnkiOjE3NjA0ODYzOTl9"
+  ],
+  "host_permissions": [
+    "*://*.instructure.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
