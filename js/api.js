@@ -200,7 +200,8 @@ const api = {
     const user = await this.fetch(
       `/courses/${courseId}/enrollments?user_id=self`
     );
-
+    // force role to "StudentEnrollment" for testing
+    user[0].role = "StudentEnrollment";
     return user[0] || null;
   },
 
