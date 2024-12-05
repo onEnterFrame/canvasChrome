@@ -56,5 +56,5 @@ A Chrome extension that helps students and observers track assignments and progr
 5. Open a Pull Request
 
 ## License
+This project is licensed under the [MIT License](LICENSE).
 
-This project is licensed under the MIT License.
